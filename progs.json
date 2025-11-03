@@ -1,0 +1,12 @@
+{
+        "projects": [
+                {
+                        "name": "vizliv",
+                        "desc": {
+                                "fr": "vizlif est un visualisateur de fichier qui montre la fréquence d'apparitions des paires d'octet",
+                                "en": "vizlif is a file vizualizer that show bytes pairs frequency"
+                        },
+                        "file": "progs/vizlif"
+                }
+        ]
+}
