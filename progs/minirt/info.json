@@ -1,0 +1,18 @@
+{
+        "name": "MiniRT",
+        "brief": {
+                "fr": "MiniRT est un moteur graphique utilisant la téchnologie Ray-Tracing",
+                "en": "MiniRT is a graphics engine using Ray-Tracing tecnology"
+        },
+        "text": {
+                "fr": "<p>Vizlif est un visualiseur de fichier démontrant la fréquence d'apparition des pairs d'octets sous la formes de coordinées 2D</p><p>par example, les octets AA BB CC DD EE seront analizé sous la forme: {AA; BB} {BB; CC} {CC; DD} {DD; EE}</p><p>avec cet outils, nous pouvons voir que certains fichiers montres des patternes reconnaissable, par example les fichiers text en ASCII n'occupe qu'un quart de l'image généré, car les caractères ASCII n'utilise que les sept premiers bits d'un octet donc les pairs d'octet ayant un composant supèrieur à 127 ne sont pas utilisé</p>",
+                "en": "<p>Vizlif is a file visualiser showing the bytes pairs frequency as 2D coordinates</p><p>for examples the bytes AA BB CC DD EE will be analyzed as: {AA; BB} {BB; CC} {CC; DD} {DD; EE}</p><p>the more a pair of byte will appear in a file the brighter the pixel at its position.</p><p>with this tool, we can see that some files type have spécifics patterns for examples pure ASCII texts files only occupies a quarter of the generated image, because ascii is only seven bits long so coordinates that are have a component greater than 127 are not used</p>"
+        },
+        "images": [
+                "simple test scene pixelated",
+                "a lolipop",
+                "a simple test scene a full resolution",
+                "a pokeball at full resolution",
+                "a pokeball at a lower resolution"
+        ]
+}

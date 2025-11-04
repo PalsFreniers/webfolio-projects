@@ -1,7 +1,7 @@
 {
         "projects": [
                 {
-                        "name": "Vizliv",
+                        "name": "Vizlif",
                         "desc": {
                                 "fr": "vizlif est un visualisateur de fichier qui montre la fréquence d'apparitions des paires d'octet",
                                 "en": "vizlif is a file vizualizer that show bytes pairs frequency"
@@ -14,7 +14,7 @@
                                 "fr": "MiniRT est un moteur graphique utilisant la téchnologie Ray-Tracing",
                                 "en": "MiniRT is a graphics engine using Ray-Tracing tecnology"
                         },
-                        "file": "vizlif"
+                        "file": "minirt"
                 }
         ]
 }
