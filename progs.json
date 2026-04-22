@@ -2,7 +2,7 @@
 	"projects": [
 		{
 			"name": "Vizlif",
-			"brief": {
+			"desc": {
 				"fr": "Vizlif est un visualiseur de fichier représentant la fréquence d'apparition des paires d'octets sous forme d'image 2D.",
 				"en": "Vizlif is a file visualizer that renders byte-pair frequencies as a 2D heatmap image."
 			},
