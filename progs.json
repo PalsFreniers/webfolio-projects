@@ -18,6 +18,10 @@
 		},
 		{
 			"name": "Libasm",
+			"desc": {
+				"fr": "Libasm est une réimplémentation de fonctions de la libc et de structures de données en assembleur x86_64, conçue comme exercice d'apprentissage.",
+				"en": "Libasm is a reimplementation of libc functions and data structures in x86_64 assembly, designed as a learning exercise."
+			},
 			"file": "libasm"
 		}
 	]
