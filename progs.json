@@ -23,6 +23,14 @@
 				"en": "Libasm is a reimplementation of libc functions and data structures in x86_64 assembly, designed as a learning exercise."
 			},
 			"file": "libasm"
+		},
+		{
+			"name": "Dr-Quine",
+			"desc": {
+				"fr": "Dr-Quine est une exploration du concept de quine — programme qui produit son propre code source — décliné en trois variantes et implémenté dans 12 langages de programmation différents.",
+				"en": "Dr-Quine is an exploration of the quine concept — a program that outputs its own source code — declined in three variants and implemented across 12 different programming languages."
+			},
+			"file": "dr-quine"
 		}
 	]
 }
