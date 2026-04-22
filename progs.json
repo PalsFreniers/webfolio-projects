@@ -31,6 +31,14 @@
 				"en": "Dr-Quine is an exploration of the quine concept — a program that outputs its own source code — declined in three variants and implemented across 12 different programming languages."
 			},
 			"file": "dr-quine"
+		},
+		{
+			"name": "FTVM",
+			"desc": {
+				"fr": "FTVM est une machine virtuelle complète en C++98 avec son propre jeu d'instructions, son format binaire, son langage assembleur FTAS et un système d'extensions dynamiques via bibliothèques partagées.",
+				"en": "FTVM is a complete virtual machine written in C++98 with its own instruction set, binary format, FTAS assembly language and a dynamic extension system via shared libraries."
+			},
+			"file": "ftvm"
 		}
 	]
 }
