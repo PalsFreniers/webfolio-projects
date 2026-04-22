@@ -1,18 +1,53 @@
 {
-	"name": "MiniRT",
+	"name": "miniRT",
+	"url": "https://codeberg.org/PLS42/miniRT",
 	"brief": {
-		"fr": "MiniRT est un moteur graphique utilisant la téchnologie Ray-Tracing",
-		"en": "MiniRT is a graphics engine using Ray-Tracing tecnology"
+		"fr": "miniRT est un moteur de ray tracing en C avec une interface graphique interactive permettant de rendre et modifier des scènes 3D en temps réel depuis un fichier de scène.",
+		"en": "miniRT is a C ray tracing engine with an interactive graphical interface for rendering and editing 3D scenes in real time from a scene file."
 	},
 	"text": {
-		"fr": "<p>Vizlif est un visualiseur de fichier démontrant la fréquence d'apparition des pairs d'octets sous la formes de coordinées 2D</p><p>par example, les octets AA BB CC DD EE seront analizé sous la forme: {AA; BB} {BB; CC} {CC; DD} {DD; EE}</p><p>avec cet outils, nous pouvons voir que certains fichiers montres des patternes reconnaissable, par example les fichiers text en ASCII n'occupe qu'un quart de l'image généré, car les caractères ASCII n'utilise que les sept premiers bits d'un octet donc les pairs d'octet ayant un composant supèrieur à 127 ne sont pas utilisé</p>",
-		"en": "<p>Vizlif is a file visualiser showing the bytes pairs frequency as 2D coordinates</p><p>for examples the bytes AA BB CC DD EE will be analyzed as: {AA; BB} {BB; CC} {CC; DD} {DD; EE}</p><p>the more a pair of byte will appear in a file the brighter the pixel at its position.</p><p>with this tool, we can see that some files type have spécifics patterns for examples pure ASCII texts files only occupies a quarter of the generated image, because ascii is only seven bits long so coordinates that are have a component greater than 127 are not used</p>"
+		"fr": "<p>miniRT est un moteur de ray tracing from scratch en C, utilisant <strong>MacroLibX</strong> (surcouche SDL2) comme backend graphique. Il parse un fichier <code>.rt</code> décrivant une scène 3D et en produit le rendu pixel par pixel via le calcul de rayons, à une résolution de 900×600.</p><p>Le rendu implémente les intersections rayon/sphère, rayon/plan et rayon/cylindre, un modèle d'éclairage de Phong complet (lumière ambiante et diffuse), des ombres portées via shadow rays, ainsi qu'une caméra entièrement paramétrable avec FOV et transformations matricielles.</p><p>Le projet va bien au-delà du sujet de base grâce à une <strong>interface graphique interactive à deux fenêtres</strong> : la première affiche le rendu 3D, la seconde est un panneau de contrôle UI avec boutons et numpad permettant de modifier en live la position, la couleur, la taille et la direction des objets de la scène, puis de sauvegarder les changements directement dans le fichier <code>.rt</code>.</p><p>L'architecture du projet est particulièrement soignée : un logger intégré avec niveaux d'erreur, un allocateur d'arène (<code>ft_arena</code>) pour la gestion mémoire, un type string dynamique maison (<code>dstring</code>), et une bibliothèque mathématique 3D complète couvrant vecteurs (<code>vec3</code>), matrices 3×3 (<code>mat3</code>) et rotations. Le tout est compilable en mode optimisé (<code>Ofast + LTO</code>) ou debug.</p>",
+		"en": "<p>miniRT is a from-scratch ray tracing engine written in C, using <strong>MacroLibX</strong> (an SDL2 wrapper) as its graphics backend. It parses a <code>.rt</code> file describing a 3D scene and renders it pixel by pixel through ray computation, at a resolution of 900×600.</p><p>The renderer implements ray/sphere, ray/plane and ray/cylinder intersections, a full Phong lighting model (ambient and diffuse), hard shadows via shadow rays, and a fully configurable camera with FOV and matrix transforms.</p><p>The project goes well beyond the base subject with an <strong>interactive dual-window graphical interface</strong>: the first window displays the 3D render, the second is a UI control panel with buttons and a numpad for live editing of object position, color, size and direction, with the ability to save changes directly back to the <code>.rt</code> file.</p><p>The architecture is particularly polished: an integrated logger with error levels, an arena allocator (<code>ft_arena</code>) for memory management, a custom dynamic string type (<code>dstring</code>), and a complete 3D math library covering vectors (<code>vec3</code>), 3×3 matrices (<code>mat3</code>) and rotations. The project can be compiled in optimised mode (<code>Ofast + LTO</code>) or debug mode.</p>"
 	},
 	"images": [
 		"simple test scene pixelated",
 		"a lolipop",
-		"a simple test scene a full resolution",
+		"a simple test scene at full resolution",
 		"a pokeball at full resolution",
 		"a pokeball at a lower resolution"
+	],
+	"learnings": [
+		{
+			"fr": "Implémentation complète d'un moteur de ray tracing depuis zéro (intersections rayon/sphère, plan, cylindre ; shadow rays ; boucle de rendu pixel par pixel)",
+			"en": "Full implementation of a ray tracing engine from scratch (ray/sphere, plane, cylinder intersections; shadow rays; pixel-by-pixel render loop)"
+		},
+		{
+			"fr": "Modélisation de l'éclairage avec le modèle de Phong (lumière ambiante, diffuse, ombres portées)",
+			"en": "Lighting modeling with the Phong reflection model (ambient light, diffuse shading, hard shadows)"
+		},
+		{
+			"fr": "Développement d'une bibliothèque mathématique 3D complète : vecteurs (vec3), matrices 3×3 (mat3) et rotations",
+			"en": "Development of a complete 3D math library: vectors (vec3), 3×3 matrices (mat3) and rotations"
+		},
+		{
+			"fr": "Conception d'une interface graphique interactive à deux fenêtres avec MacroLibX (SDL2) : rendu temps réel et panneau de contrôle UI",
+			"en": "Designing an interactive dual-window graphical interface with MacroLibX (SDL2): real-time rendering and UI control panel"
+		},
+		{
+			"fr": "Écriture d'un parser robuste pour un format de fichier de scène personnalisé (.rt) avec validation syntaxique et gestion des erreurs",
+			"en": "Writing a robust parser for a custom scene file format (.rt) with syntax validation and error handling"
+		},
+		{
+			"fr": "Implémentation d'un allocateur d'arène (ft_arena) pour une gestion mémoire performante et sécurisée",
+			"en": "Implementing an arena allocator (ft_arena) for efficient and safe memory management"
+		},
+		{
+			"fr": "Conception d'un type string dynamique maison (dstring) et d'un logger avec niveaux d'erreur",
+			"en": "Designing a custom dynamic string type (dstring) and a logger with error levels"
+		},
+		{
+			"fr": "Gestion d'un projet C de grande envergure en binôme (186 commits) avec une architecture modulaire avancée",
+			"en": "Managing a large-scale C project as a pair (186 commits) with an advanced modular architecture"
+		}
 	]
 }

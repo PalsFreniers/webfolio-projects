@@ -1,19 +1,49 @@
 {
-  "name": "Libasm",
-  "url": "https://codeberg.org/PLS42/Libasm",
-  "brief": {
-    "fr": "Libasm est une réimplémentation de fonctions de la libc et de structures de données en assembleur x86_64, conçue comme exercice d'apprentissage.",
-    "en": "Libasm is a reimplementation of libc functions and data structures in x86_64 assembly, designed as a learning exercise."
-  },
-  "text": {
-    "fr": "<p>Libasm est un projet d'apprentissage de l'assembleur x86_64 consistant à réimplémenter des fonctions standard de la bibliothèque C ainsi que des structures de données classiques, entièrement en langage d'assemblage NASM.</p><p>Les fonctions de la libc réimplémentées couvrent la manipulation de chaînes de caractères (<code>ft_strlen</code>, <code>ft_strcpy</code>, <code>ft_strdup</code>, <code>ft_strcmp</code>) ainsi que les appels système bas niveau (<code>ft_read</code>, <code>ft_write</code>). S'y ajoutent des fonctions plus avancées comme <code>ft_atoi_base</code> pour la conversion de chaînes dans une base arbitraire.</p><p>Le projet va au-delà des simples fonctions libc en incluant la manipulation de listes chaînées en assembleur : <code>ft_list_push_front</code>, <code>ft_list_size</code>, <code>ft_list_sort</code> et <code>ft_list_remove_if</code>. Ces implémentations mettent en pratique la gestion manuelle des pointeurs, des appels de fonctions et de la pile directement au niveau registre.</p><p>Pour faciliter l'écriture et la lisibilité du code assembleur, un système de macros NASM (<code>ft_macros.inc</code>) a été développé. Une suite de tests est également fournie pour valider le comportement de chaque fonction face à son équivalent de la libc.</p>",
-    "en": "<p>Libasm is an x86_64 assembly learning project consisting of reimplementing standard C library functions and classic data structures entirely in NASM assembly language.</p><p>The reimplemented libc functions cover string manipulation (<code>ft_strlen</code>, <code>ft_strcpy</code>, <code>ft_strdup</code>, <code>ft_strcmp</code>) as well as low-level system calls (<code>ft_read</code>, <code>ft_write</code>). More advanced functions are also included, such as <code>ft_atoi_base</code> for converting strings in an arbitrary numeric base.</p><p>The project goes beyond simple libc functions by implementing linked list operations in assembly: <code>ft_list_push_front</code>, <code>ft_list_size</code>, <code>ft_list_sort</code> and <code>ft_list_remove_if</code>. These implementations put into practice manual pointer management, function calls and stack discipline directly at the register level.</p><p>To improve code readability and reduce boilerplate, a NASM macro system (<code>ft_macros.inc</code>) was developed. A test suite is also provided to validate each function's behaviour against its libc counterpart.</p>"
-  },
-  "images": [
-    "raw image",
-    "raw wav music",
-    "raw ASCII txt",
-    "raw wasm bytecode",
-    "raw x86_64 machine code"
-  ]
+	"name": "Libasm",
+	"url": "https://codeberg.org/PLS42/Libasm",
+	"brief": {
+		"fr": "Libasm est une réimplémentation de fonctions de la libc et de structures de données en assembleur x86_64, conçue comme exercice d'apprentissage.",
+		"en": "Libasm is a reimplementation of libc functions and data structures in x86_64 assembly, designed as a learning exercise."
+	},
+	"text": {
+		"fr": "<p>Libasm est un projet d'apprentissage de l'assembleur x86_64 consistant à réimplémenter des fonctions standard de la bibliothèque C ainsi que des structures de données classiques, entièrement en langage d'assemblage NASM.</p><p>Les fonctions de la libc réimplémentées couvrent la manipulation de chaînes de caractères (<code>ft_strlen</code>, <code>ft_strcpy</code>, <code>ft_strdup</code>, <code>ft_strcmp</code>) ainsi que les appels système bas niveau (<code>ft_read</code>, <code>ft_write</code>). S'y ajoutent des fonctions plus avancées comme <code>ft_atoi_base</code> pour la conversion de chaînes dans une base arbitraire.</p><p>Le projet va au-delà des simples fonctions libc en incluant la manipulation de listes chaînées en assembleur : <code>ft_list_push_front</code>, <code>ft_list_size</code>, <code>ft_list_sort</code> et <code>ft_list_remove_if</code>. Ces implémentations mettent en pratique la gestion manuelle des pointeurs, des appels de fonctions et de la pile directement au niveau registre.</p><p>Pour faciliter l'écriture et la lisibilité du code assembleur, un système de macros NASM (<code>ft_macros.inc</code>) a été développé. Une suite de tests est également fournie pour valider le comportement de chaque fonction face à son équivalent de la libc.</p>",
+		"en": "<p>Libasm is an x86_64 assembly learning project consisting of reimplementing standard C library functions and classic data structures entirely in NASM assembly language.</p><p>The reimplemented libc functions cover string manipulation (<code>ft_strlen</code>, <code>ft_strcpy</code>, <code>ft_strdup</code>, <code>ft_strcmp</code>) as well as low-level system calls (<code>ft_read</code>, <code>ft_write</code>). More advanced functions are also included, such as <code>ft_atoi_base</code> for converting strings in an arbitrary numeric base.</p><p>The project goes beyond simple libc functions by implementing linked list operations in assembly: <code>ft_list_push_front</code>, <code>ft_list_size</code>, <code>ft_list_sort</code> and <code>ft_list_remove_if</code>. These implementations put into practice manual pointer management, function calls and stack discipline directly at the register level.</p><p>To improve code readability and reduce boilerplate, a NASM macro system (<code>ft_macros.inc</code>) was developed. A test suite is also provided to validate each function's behaviour against its libc counterpart.</p>"
+	},
+	"learnings": [
+		{
+			"fr": "Écriture de code assembleur x86_64 avec NASM (syntaxe, directives, sections)",
+			"en": "Writing x86_64 assembly code with NASM (syntax, directives, sections)"
+		},
+		{
+			"fr": "Compréhension et application de la convention d'appel System V AMD64 (passage d'arguments par registres, préservation des registres callee-saved)",
+			"en": "Understanding and applying the System V AMD64 calling convention (register-based argument passing, callee-saved register preservation)"
+		},
+		{
+			"fr": "Gestion manuelle de la pile et des pointeurs au niveau registre",
+			"en": "Manual stack and pointer management at the register level"
+		},
+		{
+			"fr": "Réalisation d'appels système Linux directement en assembleur (syscall)",
+			"en": "Performing Linux system calls directly in assembly (syscall)"
+		},
+		{
+			"fr": "Implémentation de structures de données (listes chaînées) sans abstraction de haut niveau",
+			"en": "Implementing data structures (linked lists) without high-level abstractions"
+		},
+		{
+			"fr": "Création d'un système de macros NASM pour améliorer la lisibilité et la maintenabilité du code assembleur",
+			"en": "Creating a NASM macro system to improve assembly code readability and maintainability"
+		},
+		{
+			"fr": "Écriture de tests unitaires en C pour valider des fonctions assembleur",
+			"en": "Writing C unit tests to validate assembly functions"
+		}
+	],
+	"images": [
+		"raw image",
+		"raw wav music",
+		"raw ASCII txt",
+		"raw wasm bytecode",
+		"raw x86_64 machine code"
+	]
 }

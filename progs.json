@@ -11,8 +11,8 @@
 		{
 			"name": "MiniRT",
 			"desc": {
-				"fr": "MiniRT est un moteur graphique utilisant la téchnologie Ray-Tracing",
-				"en": "MiniRT is a graphics engine using Ray-Tracing tecnology"
+				"fr": "miniRT est un moteur de ray tracing en C avec une interface graphique interactive permettant de rendre et modifier des scènes 3D en temps réel depuis un fichier de scène.",
+				"en": "miniRT is a C ray tracing engine with an interactive graphical interface for rendering and editing 3D scenes in real time from a scene file."
 			},
 			"file": "minirt"
 		},
