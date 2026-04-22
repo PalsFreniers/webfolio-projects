@@ -40,10 +40,10 @@
 		}
 	],
 	"images": [
-		"raw image",
-		"raw wav music",
-		"raw ASCII txt",
-		"raw wasm bytecode",
-		"raw x86_64 machine code"
+		"Project Overview",
+		"Project Stats",
+		"SysV ABI",
+		"Linked Lists",
+		"Syscalls"
 	]
 }
