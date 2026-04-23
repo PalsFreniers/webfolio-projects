@@ -10,7 +10,12 @@
 		"en": "<p>FTVM (FT Virtual Machine) is a stack-and-register virtual machine implemented entirely in C++98. The project is composed of four distinct elements: a custom binary file format (magic <code>FTVM</code>) with a segment table, a set of 26 instructions covering arithmetic, logic, memory and control flow, a compiler from the <code>.ftas</code> assembly language to this binary format, and a simulator with a step-by-step debug mode.</p><p>The VM has 6 general-purpose 32-bit registers (<code>R1</code>–<code>R6</code>), an instruction pointer <code>RIP</code>, an execution stack and 1 MB of memory addressable by byte, word or dword. Each instruction is encoded as 8 bytes containing the opcode, the addressing mode (immediate, register or memory address) and the operation size.</p><p>The FTAS assembly language supports labels, comments, three addressing modes and <code>EXTERN</code> declarations for calling external functions. These functions are resolved at runtime from a shared library (<code>.so</code>) via <code>dlopen</code>/<code>dlsym</code>, and identified by their SHA-256 hash to guarantee link integrity. The VM issues Linux system calls directly through inline x86_64 ASM.</p><p>Compilation produces two artefacts: the <code>FTVM</code> executable (modes <code>com</code>, <code>sim</code> and <code>bug</code>) and a static library <code>FTVML.a</code> for embedding the VM in other projects. A complete example — a fully working guess-the-number game written in FTAS — is provided along with its companion external library.</p>"
 	},
 	"images": [
-		"Project Showcase"
+		"Project Showcase",
+		"Binary Format",
+		"Core Architecture",
+		"Instructions Showcase",
+		"Compilation Pipeline",
+		"SHA256 hash table"
 	],
 	"learnings": [
 		{
