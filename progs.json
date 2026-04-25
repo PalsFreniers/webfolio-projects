@@ -53,6 +53,15 @@
 			},
 			"file": "kfs",
 			"wip": true
+		},
+		{
+			"name": "ft_transcendance - CLI",
+			"desc": {
+				"fr": "Client terminal interactif pour ft_transcendance, une interface TUI complète en C3 permettant de jouer au Pong en temps réel depuis un terminal, avec authentification 2FA, matchmaking et rendu graphique pixel par pixel.",
+				"en": "Interactive terminal client for ft_transcendance, a full TUI interface written in C3 to play Pong in real time from a terminal, featuring 2FA authentication, matchmaking and pixel-by-pixel graphical rendering."
+			},
+			"file": "cli-trans",
+			"wip": false
 		}
 	]
 }

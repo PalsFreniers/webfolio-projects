@@ -1,0 +1,45 @@
+{
+	"name": "ft_transcendance - CLI",
+	"url": "https://github.com/MrMaximora/transcendance/tree/main/cli",
+	"brief": {
+		"fr": "Client terminal interactif pour ft_transcendance, une interface TUI complète en C3 permettant de jouer au Pong en temps réel depuis un terminal, avec authentification 2FA, matchmaking et rendu graphique pixel par pixel.",
+		"en": "Interactive terminal client for ft_transcendance, a full TUI interface written in C3 to play Pong in real time from a terminal, featuring 2FA authentication, matchmaking and pixel-by-pixel graphical rendering."
+	},
+	"text": {
+		"fr": "<p>ft_transcendance est le projet final du cursus de l'école 42 : une plateforme web de Pong multijoueur en temps réel. Ce dépôt regroupe le frontend TypeScript, les microservices backend, la configuration nginx et une CLI (la partie sur laquelle j'ai travaillé).</p><p>La CLI est un client terminal complet écrit en <strong>C3</strong>, structuré autour d'une machine à états à cinq écrans : <code>LOGIN</code>, <code>TFA</code> (authentification à deux facteurs), <code>MENU</code>, <code>WAIT</code> (salle d'attente) et <code>GAME</code>. L'utilisateur peut se connecter, rejoindre ou créer un lobby, puis jouer une partie de Pong sans quitter son terminal.</p><p>Le rendu graphique est assuré par <strong>termbox</strong>, une bibliothèque de dessin bas niveau dans le terminal, avec un système de fenêtre maison (<code>window.c3</code>) gérant les événements clavier et souris, et un rendu pixel par pixel. Pendant la partie, la balle change de couleur dynamiquement selon sa position via une conversion HSL→RGB, et les deux raquettes (rouge à droite, bleue à gauche) sont rendues avec des rectangles colorés.</p><p>La communication avec le backend passe par deux canaux : des requêtes HTTP via <strong>libcurl</strong> pour l'authentification et le matchmaking, et une connexion <strong>WebSocket</strong> (Socket.IO) pour les événements de jeu en temps réel, réception des états de jeu, émission des inputs clavier (<code>keydown</code>/<code>keyup</code>) et gestion du protocole de heartbeat Socket.IO. Le tout est compilé via un build system basé sur <strong>nob.h</strong>.</p>",
+		"en": "<p>ft_transcendance is the final project of the 42 school curriculum: a real-time multiplayer Pong web platform. This repository includes the TypeScript frontend, backend microservices, nginx configuration, and a CLI (the part I worked on).</p><p>The CLI is a fully-featured terminal client written in <strong>C3</strong>, structured around a five-screen state machine: <code>LOGIN</code>, <code>TFA</code> (two-factor authentication), <code>MENU</code>, <code>WAIT</code> (lobby waiting room) and <code>GAME</code>. The user can log in, join or create a lobby, then play a game of Pong without leaving their terminal.</p><p>Graphics are handled by <strong>termbox</strong>, a low-level terminal drawing library, alongside a custom window system (<code>window.c3</code>) managing keyboard and mouse events and pixel-by-pixel rendering. During the game, the ball dynamically changes color based on its position using HSL→RGB conversion, and the two paddles (red on the right, blue on the left) are rendered as colored rectangles.</p><p>Backend communication goes through two channels: HTTP requests via <strong>libcurl</strong> for authentication and matchmaking, and a <strong>WebSocket</strong> connection (Socket.IO) for real-time game events, receiving game states, emitting keyboard inputs (<code>keydown</code>/<code>keyup</code>) and handling the Socket.IO heartbeat protocol. The whole project is compiled using a <strong>nob.h</strong>-based build system.</p>"
+	},
+	"images": [
+		"Login Screen",
+		"Main Menu",
+		"Waiting Lobby",
+		"Terminal Pong",
+		"Web Pong"
+	],
+	"learnings": [
+		{
+			"fr": "Conception d'une interface TUI complète en C3 : machine à états, gestion des événements clavier/souris, composants UI (TextBox, Button, Box) et rendu pixel par pixel via termbox",
+			"en": "Designing a complete TUI interface in C3: state machine, keyboard/mouse event handling, UI components (TextBox, Button, Box) and pixel-by-pixel rendering via termbox"
+		},
+		{
+			"fr": "Intégration de libcurl en C3 pour des requêtes HTTP REST avec authentification par JWT (Bearer token)",
+			"en": "Integrating libcurl in C3 for HTTP REST requests with JWT authentication (Bearer token)"
+		},
+		{
+			"fr": "Implémentation d'un client WebSocket Socket.IO from scratch : connexion WSS, protocole de heartbeat (ping/pong), émission et réception d'événements en temps réel",
+			"en": "Implementing a Socket.IO WebSocket client from scratch: WSS connection, heartbeat protocol (ping/pong), real-time event emission and reception"
+		},
+		{
+			"fr": "Synchronisation du rendu terminal avec les événements réseau temps réel (game-state, game-end, input)",
+			"en": "Synchronizing terminal rendering with real-time network events (game-state, game-end, input)"
+		},
+		{
+			"fr": "Rendu graphique dans un terminal : conversion HSL→RGB, dessin de rectangles et de pixels colorés, mise à l'échelle d'un espace logique vers l'espace pixel du terminal",
+			"en": "Graphical rendering in a terminal: HSL→RGB conversion, drawing colored rectangles and pixels, scaling from logical game space to terminal pixel space"
+		},
+		{
+			"fr": "Apprentissage et maîtrise de C3 : syntaxe moderne, macros, interfaces, gestion mémoire manuelle et interopérabilité avec des bibliothèques C (libcurl, termbox)",
+			"en": "Learning and mastering C3: modern syntax, macros, interfaces, manual memory management and interoperability with C libraries (libcurl, termbox)"
+		}
+	]
+}
