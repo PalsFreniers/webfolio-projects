@@ -1,0 +1,53 @@
+{
+	"name": "kfs / Polymorphik",
+	"url": "https://codeberg.org/27/kfs",
+	"brief": {
+		"fr": "Polymorphik est un noyau d'OS x86 écrit en une douzaine de langages différents, bootable via Multiboot2, avec HAL, allocateur mémoire, pilotes et workspaces interactifs.",
+		"en": "Polymorphik is an x86 OS kernel written in a dozen different languages, bootable via Multiboot2, featuring a HAL, memory allocator, drivers and interactive workspaces."
+	},
+	"text": {
+		"fr": "<p>Polymorphik est le noyau d'OS personnalisé développé dans le cadre de la série de projets KFS (Kernel From Scratch) de l'école 42. C'est un noyau monolithique semi-modulaire pour architecture x86, qui se distingue par son approche polyglotte : chaque composant est écrit dans le langage le plus adapté à sa fonction, en mélangeant C, C++, assembleur x86, C3, Zig, Ada et HolyC au sein d'un même binaire.</p><p>Le noyau démarre via un entête Multiboot2 traité en assembleur et en C, qui initialise le système d'affichage (VGA EGA ou framebuffer), la mémoire et passe la main au cœur du noyau. La couche d'abstraction matérielle (<code>polymorphik-hal</code>) implémente en C++ la GDT, la TSS, l'IDT, les ISR et la gestion des IRQ via le contrôleur PIC i8259. Le sous-système mémoire (<code>polymorphik-alloc</code>) est écrit en C3 et implémente un allocateur de pages, un allocateur virtuel et une gestion des blocs mémoire. Le parsing des tables ACPI est délégué à Ada.</p><p>Le noyau expose quatre workspaces interactifs accessibles depuis le clavier : un interpréteur de commandes (<code>shell</code>), un clavier piano jouant des notes via le haut-parleur PC (<code>piano</code>), un afficheur de touches (<code>showkeys</code>) et un workspace dédié aux tests 42. <code>libkernel</code> (écrite en Zig) fournit les primitives bas niveau (manipulation mémoire, chaînes, ASCII) partagées entre tous les modules, avec des interfaces C et C3 générées automatiquement.</p>",
+		"en": "<p>Polymorphik is a custom OS kernel developed as part of the KFS (Kernel From Scratch) project series at school 42. It is a semi-modular monolithic kernel for x86 architecture, distinguished by its polyglot approach: each component is written in the language best suited to its function, mixing C, C++, x86 assembly, C3, Zig, Ada and HolyC within a single binary.</p><p>The kernel boots via a Multiboot2 header processed in assembly and C, which initialises the display system (VGA EGA or framebuffer), memory, and hands control to the kernel core. The hardware abstraction layer (<code>polymorphik-hal</code>) implements in C++ the GDT, TSS, IDT, ISRs and IRQ handling via the i8259 PIC controller. The memory subsystem (<code>polymorphik-alloc</code>) is written in C3 and implements a page allocator, virtual allocator and memory block management. ACPI table parsing is delegated to Ada.</p><p>The kernel exposes four interactive workspaces accessible from the keyboard: a command interpreter (<code>shell</code>), a piano keyboard that plays notes through the PC speaker (<code>piano</code>), a key display (<code>showkeys</code>), and a 42-dedicated test workspace. <code>libkernel</code> (written in Zig) provides low-level primitives (memory manipulation, strings, ASCII) shared across all modules, with automatically generated C and C3 interfaces.</p>"
+	},
+	"images": [
+		"Project Showcase",
+		"Project Architecture",
+		"Memory Mapping",
+		"Project Shell",
+		"Project Boot Log"
+	],
+	"learnings": [
+		{
+			"fr": "Développement d'un noyau d'OS x86 from scratch : séquence de boot Multiboot2, passage en mode protégé, initialisation de la GDT, TSS, IDT et gestion des interruptions (ISR/IRQ)",
+			"en": "Developing an x86 OS kernel from scratch: Multiboot2 boot sequence, protected mode switch, GDT, TSS, IDT initialisation and interrupt handling (ISR/IRQ)"
+		},
+		{
+			"fr": "Conception d'une architecture noyau polyglotte : intégration de C, C++, assembleur x86, C3, Zig, Ada et HolyC dans un unique binaire ELF via un linker script personnalisé",
+			"en": "Designing a polyglot kernel architecture: integrating C, C++, x86 assembly, C3, Zig, Ada and HolyC into a single ELF binary via a custom linker script"
+		},
+		{
+			"fr": "Implémentation d'un allocateur mémoire bas niveau en C3 : allocateur de pages physiques, allocateur virtuel (kmap/kunmap) et gestion des memory maps Multiboot2",
+			"en": "Implementing a low-level memory allocator in C3: physical page allocator, virtual allocator (kmap/kunmap) and Multiboot2 memory map management"
+		},
+		{
+			"fr": "Écriture d'une couche d'abstraction matérielle (HAL) en C++ : GDT/TSS, PIC i8259, IDT et gestionnaires d'interruptions",
+			"en": "Writing a hardware abstraction layer (HAL) in C++: GDT/TSS, i8259 PIC, IDT and interrupt handlers"
+		},
+		{
+			"fr": "Développement de pilotes bas niveau : affichage VGA EGA et framebuffer, port série, haut-parleur PC (PC speaker via ports I/O)",
+			"en": "Developing low-level drivers: VGA EGA and framebuffer display, serial port, PC speaker (via I/O ports)"
+		},
+		{
+			"fr": "Utilisation de Zig pour écrire une bibliothèque noyau partagée (libkernel) avec génération d'interfaces C et C3",
+			"en": "Using Zig to write a shared kernel library (libkernel) with auto-generated C and C3 interfaces"
+		},
+		{
+			"fr": "Parsing des tables ACPI en Ada et intégration dans un noyau C/C++",
+			"en": "Parsing ACPI tables in Ada and integrating them into a C/C++ kernel"
+		},
+		{
+			"fr": "Mise en place d'un système de build multi-langages avec Nix/NixOS comme environnement de développement reproductible",
+			"en": "Setting up a multi-language build system with Nix/NixOS as a reproducible development environment"
+		}
+	]
+}
